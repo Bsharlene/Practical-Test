@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+// Function to read a positive even number
+int readPositiveEvenNumber() {
+    int number;
+
+    // Use a for loop to ensure we keep asking for input until a valid number is entered
+    for (;;) { // Infinite loop, will break when a valid number is entered
+        printf("Enter a positive even number: ");
+        scanf("%d", &number);
+
+        // Check if the number is positive and even
+        if (number >= 0 && number % 2 == 0) {
+            return number; // Return the valid number
+        } else {
+            printf("Error: Please enter a positive even number.\n");
+        }
+    }
+}
+
+int main() {
+    int count;
+
+    // Ask the user how many numbers they want to enter
+    printf("How many positive even numbers do you want to enter? ");
+    scanf("%d", &count);
+
+    // Loop to read the specified number of positive even numbers
+    for (int i = 0; i < count; i++) {
+        int evenNumber = readPositiveEvenNumber();
+        printf("You entered: %d\n", evenNumber);
+    }
+
+    return 0;
+}
