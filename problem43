@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n, number, total = 0;
+
+    printf("Enter the number of integers you want to input: ");
+    scanf("%d", &n);
+
+    printf("Enter your numbers: <EOF> to stop.\n");
+
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &number) != 1) {
+            printf("Invalid input. Please enter integers only.\n");
+            break; // Exit the loop if input is invalid
+        }
+        total += number;
+        printf("Total: %d\n", total);
+    }
+
+    return 0;
+}
