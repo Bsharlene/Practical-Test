@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int number;
+    int min, max;
+    float sum = 0.0;
+    int count = 0;
+
+    printf("Enter integers (end with a non-integer):\n");
+
+    // Read integers until a non-integer is entered
+    while (scanf("%d", &number) == 1) {
+        // Print the number
+        printf("%d ", number);
+
+        // Update sum and count
+        sum += number;
+        count++;
+
+        // Initialize min and max on the first valid input
+        if (count == 1) {
+            min = max = number;
+        } else {
+            // Update min and max
+            if (number < min) {
+                min = number;
+            }
+            if (number > max) {
+                max = number;
+            }
+        }
+    }
+
+    // Check if any integers were read
+    if (count > 0) {
+        // Calculate average
+        float average = sum / count;
+
+        // Print results
+        printf("\nMinimum: %d\n", min);
+        printf("Maximum: %d\n", max);
+        printf("Average: %.2f\n", average);
+    } else {
+        printf("No integers were entered.\n");
+    }
+
+    return 0;
+}
