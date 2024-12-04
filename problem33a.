@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    // Starting value
+    int start = 6;
+    // Ending value
+    int end = 66;
+    // Increment value
+    int increment = 2;
+
+    // Loop from start to end
+    for (int i = start; i <= end; i += increment) {
+        printf("%d", i);
+        // Print a comma and space after each number except the last one
+        if (i < end) {
+            printf(", ");
+        }
+    }
+    printf("\n"); // New line after the sequence
+
+    return 0;
+}
