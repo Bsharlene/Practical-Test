@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    float number, sum = 0.0;
+
+    printf("Enter the number of floating-point numbers (n): ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter floating-point number %d: ", i + 1);
+        scanf("%f", &number);
+        if (number > 0) {
+            sum += number;
+            count++;
+        }
+    }
+
+    if (count > 0) {
+        printf("The average of the positive numbers is: %.2f\n", sum / count);
+    } else {
+        printf("No positive numbers were entered.\n");
+    }
+
+    return 0;
+}
