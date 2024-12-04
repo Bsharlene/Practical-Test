@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int sum = 0; // Variable to hold the sum
+
+    // Loop through numbers from 15 to 45
+    for (int i = 15; i <= 45; i++) {
+        if (i % 2 != 0) { // Check if the number is odd
+            sum += i; // Add the odd number to the sum
+        }
+    }
+
+    // Print the result
+    printf("The sum of the odd numbers between 15 and 45 inclusive is: %d\n", sum);
+
+    return 0;
+}
