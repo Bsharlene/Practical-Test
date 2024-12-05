@@ -1,0 +1,189 @@
+36
+#include <stdio.h>
+
+int main() {
+    int number, largest = 0, count = 0, current;
+    
+    printf("Enter integers separated by spaces (end input with Ctrl+D):\n");
+    
+    while (scanf("%d", &number) != EOF) {
+        if (count == 0 || number > largest) {
+            largest = number;
+            current = 1; // Reset count for new largest
+        } else if (number == largest) {
+            current++;
+        }
+        count++;
+    }
+    
+    if (count > 0) {
+        printf("Largest value is %d, entered %d times.\n", largest, current);
+    } else {
+        printf("No numbers were entered.\n");
+    }
+
+    return 0;
+}
+
+37
+#include <stdio.h>
+
+void printNumberPyramid(int height) {
+    for (int i = height; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int height = 9; // Example height
+    printNumberPyramid(height);
+    return 0;
+}
+
+38
+#include <stdio.h>
+
+void printRectangle(int height, int width) {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int height = 4, width = 10; // Example dimensions
+    printRectangle(height, width);
+    return 0;
+}
+
+39
+#include <stdio.h>
+
+void printHollowSquare(int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int size = 5; // Example size
+    printHollowSquare(size);
+    return 0;
+}
+
+40
+#include <stdio.h>
+
+void printRightAngleTriangle(int height) {
+    for (int i = 1; i <= height; i++) {
+        for (int j = 0; j < i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int height = 5; // Example height
+    printRightAngleTriangle(height);
+    return 0;
+}
+
+41
+#include <stdio.h>
+
+void printReverseTriangle(int height) {
+    for (int i = height; i > 0; i--) {
+        for (int j = 0; j < i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int height;
+    printf("Enter the height of the triangle: ");
+    scanf("%d", &height);
+    printReverseTriangle(height);
+    return 0;
+}
+
+42
+#include <stdio.h>
+
+void printDiamondPattern(int height) {
+    for (int i = 1; i <= height; i++) {
+        int stars = (i <= (height + 1) / 2) ? i : height - i + 1;
+        for (int j = 1; j <= stars; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int height;
+    printf("Enter the height of the diamond pattern: ");
+    scanf("%d", &height);
+    printDiamondPattern(height);
+    return 0;
+}
+
+43
+#include <stdio.h>
+
+int main() {
+    int number, total = 0;
+
+    printf("Enter your numbers: <EOF> to stop.\n");
+    while (scanf("%d", &number) != EOF) {
+        total += number;
+        printf("Total: %d\n", total);
+    }
+
+    return 0;
+}
+
+44
+#include <stdio.h>
+
+int main() {
+    int number, min, max, count = 0, sum = 0;
+
+    printf("Enter integers separated by spaces (end input with Ctrl+D):\n");
+
+    while (scanf("%d", &number) != EOF) {
+        if (count == 0) {
+            min = max = number;
+        }
+        if (number < min) min = number;
+        if (number > max) max = number;
+
+        sum += number;
+        count++;
+    }
+
+    if (count > 0) {
+        printf("Numbers entered: %d\n", count);
+        printf("Minimum: %d\n", min);
+        printf("Maximum: %d\n", max);
+        printf("Average: %.2f\n", (float)sum / count);
+    } else {
+        printf("No numbers were entered.\n");
+    }
+
+    return 0;
+}
